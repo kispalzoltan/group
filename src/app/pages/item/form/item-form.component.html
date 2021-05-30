@@ -1,0 +1,125 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-icon-button [routerLink]="[ '/' ]">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      <span>Item</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <app-container *ngIf="form" [formGroup]="form">
+
+    <mat-card class="margin-bottom">
+      <mat-card-header>
+        <mat-card-title> Eszköz felvitel</mat-card-title>
+      </mat-card-header>
+    </mat-card>
+
+    
+
+    <mat-card class="margin-bottom">
+        <mat-card-header>
+          <mat-card-title>Identifier</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <table class="max-width margin-bottom" cellspacing="0" formArrayName="identifier">
+            <tr>
+              <td formGroupName="0">
+                <mat-form-field class="max-width">
+                  <mat-label>use</mat-label>
+                  <input type="text" name="use" matInput formControlName="use">
+                </mat-form-field>
+              </td>
+              <td formGroupName="0">
+                <mat-form-field class="max-width">
+                  <mat-label>value</mat-label>
+                  <input type="text" formControlName="value" name="value" matInput>
+                </mat-form-field>
+              </td>
+            </tr>
+          </table>
+        </mat-card-content>
+      </mat-card>
+      
+  <mat-card class="margin-bottom">
+    <mat-card-header>
+      <mat-card-title>Type</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <table class="max-width margin-bottom" cellspacing="0" formArrayName="type">
+        <tr>
+          <td formGroupName="0">
+            <mat-form-field class="max-width">
+              <mat-label>title</mat-label>
+              <input type="text" name="type" matInput formControlName="title">
+            </mat-form-field>
+          </td>
+          <td formGroupName="0">
+            <mat-form-field class="max-width">
+              <mat-label>creation</mat-label>
+              <input type="text" formControlName="creation" name="creation" matInput>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="margin-bottom">
+    <mat-card-header>
+      <mat-card-title>Name</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <table class="max-width margin-bottom" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="max-width">
+              <mat-label>Name</mat-label>
+              <input type="text" name="name" matInput formControlName="name">
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+    </mat-card-content>
+  </mat-card>
+
+
+  <mat-card class="margin-bottom">
+    <mat-card-header>
+      <mat-card-title>Quantity</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <table class="max-width margin-bottom" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="max-width">
+              <mat-label>quantity</mat-label>
+              <input type="text" formControlName="quantity" name="quantity" matInput>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="margin-bottom">
+    <mat-card-header>
+      <mat-card-title>Active</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <table class="max-width margin-bottom" cellspacing="0">
+        <tr>
+            <td style="flex: 1; padding-left: 8px;">
+                <mat-radio-group formControlName="active" class="max-width">
+                  <mat-radio-button value="true">True</mat-radio-button>
+                  <mat-radio-button value="false">False</mat-radio-button>
+                </mat-radio-group>
+              </td>
+        </tr>
+      </table>
+    </mat-card-content>
+  </mat-card>
+
+
+    <button mat-button (click)="log()" >log</button>
+  </app-container>

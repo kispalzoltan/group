@@ -1,0 +1,39 @@
+<!-- <span [ngSwitch]="page">
+
+
+  <span *ngSwitchCase="'home'" >
+      <app-nav [selectedCategory]="category" [categories]="categories" (callSelectC)="onSelect($event)" (callSelectPage)="page = $event"></app-nav>
+    <span [ngSwitch]="category">
+      <span *ngSwitchCase="'eszkoz'" class="container">
+        <app-eszkoz-card *ngFor="let eszkoz of eszkozok | async" [eszkoz]="eszkoz" appOnHover></app-eszkoz-card>
+        <button mat-fab class="action-btn" (click)="openDialog()">
+        <mat-icon>add</mat-icon>
+        </button>
+      </span>
+      <span *ngSwitchCase="'fertotlenito'" class="container">
+          <app-fertotlenito-card *ngFor="let fertotlenito of fertotlenitok" [fertotlenito]="fertotlenito" appOnHover></app-fertotlenito-card>
+          
+      </span>
+      <span *ngSwitchCase="'kotszer'" class="container">
+          <app-kotszer-card></app-kotszer-card>
+      </span>
+      <span *ngSwitchDefault class="container">
+        <app-splash-screen [categories]="categories"></app-splash-screen>
+      </span>
+    </span>
+  </span>
+
+  <span *ngSwitchCase="'registration'" >
+      <app-registration (callSelectPage)="page = $event"></app-registration>
+  </span>
+  <span *ngSwitchCase="'details'" >
+    <app-details></app-details>
+  </span>
+
+  <span *ngSwitchDefault >
+    <app-login (callSelectPage)="page = $event"></app-login>
+  </span>
+
+</span> -->
+<app-nav></app-nav>
+<router-outlet></router-outlet>

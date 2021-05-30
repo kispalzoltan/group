@@ -1,0 +1,64 @@
+<mat-toolbar color="primary" class="mat-elevation-z6">
+  <mat-toolbar-row id="desktopnav">
+    <a mat-button [routerLink]="[ '/' ]">
+      Group
+    </a>
+    <button mat-button *ngFor="let item of categories" [routerLink]="[ item.url ]" routerLinkActive="active">
+      {{item.title}}&nbsp;
+    </button>
+    <span style="flex: 1 1;"></span>
+    <button mat-button [matMenuTriggerFor]="menu">
+      Profil&nbsp;
+      <mat-icon>arrow_drop_down</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item disabled>
+        <mat-icon>person</mat-icon>
+        <span>Profil</span>
+      </button>
+      <button mat-menu-item disabled>
+        <mat-icon>settings</mat-icon>
+        <span>Beállítások</span>
+      </button>
+      <button mat-menu-item [routerLink]="[ '/hozzaad' ]">
+        <mat-icon>note_add</mat-icon>
+        <span>Hozzáadás</span>
+      </button>
+      <button mat-menu-item (click)=logout()>
+        <mat-icon>arrow_back</mat-icon>
+        <span>Kijelentkezés</span>
+      </button>
+    </mat-menu>
+  </mat-toolbar-row>
+  <mat-toolbar-row id="mobilnav">
+    <a mat-button [routerLink]="[ '/' ]">
+      <mat-icon>home</mat-icon>
+    </a>
+    <span style="flex: 1 1;"></span>
+    <button mat-button [matMenuTriggerFor]="menu">
+      Profil&nbsp;
+      <mat-icon>arrow_drop_down</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item disabled>
+        <mat-icon>person</mat-icon>
+        <span>Profil</span>
+      </button>
+      <button mat-menu-item disabled>
+        <mat-icon>settings</mat-icon>
+        <span>Beállítások</span>
+      </button>
+      <button mat-menu-item [routerLink]="[ '/hozzaad' ]">
+        <mat-icon>note_add</mat-icon>
+        <span>Hozzáadás</span>
+      </button>
+      <button mat-menu-item (click)=logout()>
+        <mat-icon>arrow_back</mat-icon>
+        <span>Kijelentkezés</span>
+      </button>
+    </mat-menu>
+
+  </mat-toolbar-row>
+</mat-toolbar>

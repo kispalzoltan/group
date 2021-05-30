@@ -1,0 +1,82 @@
+<form [formGroup]="form">
+    <h3>Eszköz felvétel</h3>
+    <mat-form-field class="max-width">
+      <mat-label>Type</mat-label>
+      <input matInput placeholder="" focus formControlName="type">
+    </mat-form-field>
+
+    <mat-card class="margin-bottom">
+      <mat-card-header>
+        <mat-card-title>Identifier</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <table class="max-width margin-bottom" cellspacing="0" formArrayName="identifier">
+          <tr >
+            <td formGroupName="0">
+              <mat-form-field class="max-width">
+                <mat-label>use</mat-label>
+                <input type="text" name="use" matInput formControlName="use">
+              </mat-form-field>
+            </td>
+            <td formGroupName="0">
+              <mat-form-field class="max-width">
+                <mat-label>value</mat-label>
+                <input type="text" name="value" matInput formControlName="value">
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="margin-bottom">
+      <mat-card-header>
+        <mat-card-title>Code</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <table class="max-width margin-bottom" cellspacing="0" formArrayName="code">
+          <tr>
+            <td formGroupName="0">
+              <mat-form-field class="max-width">
+                <mat-label>title</mat-label>
+                <input type="text" name="title" matInput formControlName="title">
+              </mat-form-field>
+            </td>
+            <td style="flex: 1;" formGroupName="0">
+              <mat-form-field class="max-width">
+                <mat-label>creation</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="creation">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-form-field class="max-width">
+      <mat-label>Name</mat-label>
+      <textarea placeholder="" formControlName="name" matInput cdkTextareaAutosize
+        cdkAutosizeMinRows="2" cdkAutosizeMaxRows="5"></textarea>
+    </mat-form-field>
+    <mat-form-field class="max-width">
+      <mat-label>quantity</mat-label>
+      <textarea placeholder="" formControlName="quantity" matInput cdkTextareaAutosize
+        cdkAutosizeMinRows="2" cdkAutosizeMaxRows="5"></textarea>
+    </mat-form-field>
+    <mat-form-field class="max-width">
+      <mat-label>title</mat-label>
+      <textarea placeholder="" formControlName="title" matInput cdkTextareaAutosize
+        cdkAutosizeMinRows="2" cdkAutosizeMaxRows="5"></textarea>
+    </mat-form-field>
+
+
+
+
+    <div style="display: flex; justify-content: flex-end;">
+      <button mat-button (click)="dialogRef.close()" class="margin-right">MÉGSEM</button>
+      <button mat-button [mat-dialog-close]="form.value" [disabled]="form.invalid">FELVÉTEL</button>
+    </div>
+  </form>
+  

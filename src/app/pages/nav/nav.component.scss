@@ -1,0 +1,40 @@
+[mat-button] {
+  text-transform: capitalize;
+}
+
+[mat-button]:not(:last-child) {
+  margin-right: 16px;
+}
+
+a[mat-button] {
+  font-size: xx-large;
+}
+
+.active {
+  border-bottom: white 1px solid;
+  border-radius: 0;
+}
+
+mat-toolbar {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 1000;
+}
+@media only screen and (max-width: 600px) {
+  #mobilnav{
+    display: flex !important;
+
+
+  }
+  #desktopnav{
+    display: none !important;
+    background-color: aqua;
+  }
+}
+#mobilnav{
+  display: none ;
+}
+#desktop{
+  display: flex;
+}
